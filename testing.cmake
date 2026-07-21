@@ -21,7 +21,7 @@ macro(setup_test)
 
   target_compile_options(${TEST_TARGET} PRIVATE "-g" "-Wall")
   target_link_libraries(${TEST_TARGET} PRIVATE cmocka ${_SETUPTEST_LIBS})
-  target_include_directories(${TEST_TARGET} PRIVATE ${INCLUDE_DIRS})
+  target_include_directories(${TEST_TARGET} PRIVATE ${_SETUPTEST_INCLUDE_DIRS})
   add_test(NAME ${TEST_TARGET} COMMAND ${TEST_TARGET})
   unset(TEST_TARGET)
 endmacro()
